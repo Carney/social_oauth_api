@@ -1,5 +1,8 @@
-require "social_oauth_api/version"
+require 'uri'
+require 'net/http'
+require 'json'
 
-module SocialOauthApi
-  # Your code goes here...
-end
+require 'social_oauth_api/version'
+require 'social_oauth_api/base'
+require 'social_oauth_api/weibo'
+require 'social_oauth_api/qq'
