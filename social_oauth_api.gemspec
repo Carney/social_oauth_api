@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["neverlandxy.naix@gmail.com"]
   spec.summary       = %q{social oauth for api}
   spec.description   = %q{social oauth for api}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/NaixSpirit/social_oauth_api"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
