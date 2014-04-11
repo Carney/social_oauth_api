@@ -30,6 +30,7 @@ module SocialOauthApi
       alias :id :uid
       alias :name :screen_name
       alias :image_url :profile_image_url
+      alias :user_info :show
     end
   end
 end
