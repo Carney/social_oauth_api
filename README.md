@@ -45,7 +45,7 @@ p weibo.user_info
 qq = SocialOauthApi::Qq::User.new(qq_config)
 p qq.id         # => qq open_id
 p qq.name       # => qq nickname
-p qq.name       # => qq figureurl
+p qq.image_url  # => qq figureurl
 p qq.user_info
 ```
 
