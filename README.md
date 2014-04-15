@@ -6,7 +6,10 @@
 
 只接受前端sdk传回来的第三方 **access_token** 参数
 
-支持微博和qq登录
+支持第三方列表如下:
+
+- 新浪微博
+- QQ号登录
 
 ## Installation
 
@@ -36,13 +39,13 @@ qq_config = {
   access_token: 'xxxxxxxxxxx'
 }
 
-weibo = SocialOauthApi::Weibo::User.new(weibo_config)
-p weibo.id          # => weibo uid
+weibo = SocialOauthApi::SinaWeibo::User.new(weibo_config)
+p weibo.id         # => weibo uid
 p weibo.name       # => weibo screen_name
 p weibo.image_url  # => weibo profile_image_url
 p weibo.user_info
 
-qq = SocialOauthApi::Qq::User.new(qq_config)
+qq = SocialOauthApi::QqDenglu::User.new(qq_config)
 p qq.id         # => qq open_id
 p qq.name       # => qq nickname
 p qq.image_url  # => qq figureurl

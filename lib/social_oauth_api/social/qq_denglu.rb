@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 module SocialOauthApi
-  module Qq
+  module QqDenglu
     class User < Base
       OPENID_URL = 'https://graph.qq.com/oauth2.0/me'
       USER_INFO_URL = 'https://graph.qq.com/user/get_user_info'

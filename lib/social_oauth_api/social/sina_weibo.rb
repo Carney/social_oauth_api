@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 module SocialOauthApi
-  module Weibo
+  module SinaWeibo
     class User < Base
       UID_URL  = 'https://api.weibo.com/2/account/get_uid.json'
       SHOW_URL = 'https://api.weibo.com/2/users/show.json'
