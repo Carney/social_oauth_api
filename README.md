@@ -30,22 +30,23 @@ Or install it yourself as:
 require 'social_oauth_api'
 
 weibo_config = {
-  client_id: 'xxxxxx',
-  access_token: 'xxxxxxxxxxx',
+  provider_type: 'sinaweibo',
+  access_token:  'xxxxxxxxx'
 }
 
 qq_config = {
-  client_id: 'xxxxx',
-  access_token: 'xxxxxxxxxxx'
+  provider_type: 'qqdenglu',
+  access_token:  'xxxxxxxx',
+  client_id:     'xxxxxxxx'  # => 如果只需要user_id, 不需要用户信息可以不传 client_id 参数
 }
 
-weibo = SocialOauthApi::SinaWeibo::User.new(weibo_config)
+weibo = SocialOauthApi::User.new(weibo_config)
 p weibo.id         # => weibo uid
 p weibo.name       # => weibo screen_name
 p weibo.image_url  # => weibo profile_image_url
 p weibo.user_info
 
-qq = SocialOauthApi::QqDenglu::User.new(qq_config)
+qq = SocialOauthApi::User.new(qq_config)
 p qq.id         # => qq open_id
 p qq.name       # => qq nickname
 p qq.image_url  # => qq figureurl

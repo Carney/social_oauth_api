@@ -1,14 +1,14 @@
 # encoding: utf-8
 
 module SocialOauthApi
-  class Base
-    attr_accessor :client_id, :client_secret, :access_token
+  module Base
+    attr_reader :client_id, :provider_type, :access_token
 
     HTTP_TIMEOUT = 15
 
     def initialize options
       @client_id     = options[:client_id]
-      @client_secret = options[:client_secret]
+      @provider_type = options[:provider_type]
       @access_token  = options[:access_token]
     end
 
@@ -21,6 +21,14 @@ module SocialOauthApi
         request = Net::HTTP::Get.new(uri.request_uri)
         response = http.request(request)
         response.body
+      end
+    end
+
+    class << self
+      def klass(str)
+        str.split('::').inject(Object) do |mod, class_name|
+          mod.const_get(class_name)
+        end
       end
     end
   end
