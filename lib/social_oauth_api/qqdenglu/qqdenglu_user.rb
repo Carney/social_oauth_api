@@ -6,9 +6,9 @@ module SocialOauthApi
       include SocialOauthApi::Base
       include SocialOauthApi::Qqdenglu::Config
 
-      def open_id
-        @open_id ||= get(open_id_url, access_token: access_token)
-        @open_id.match(/"openid":"(?<openid>\w+)"/)[:openid]
+      def openid
+        @openid ||= get(open_id_url, access_token: access_token)
+        @openid.match(/"openid":"(?<openid>\w+)"/)[:openid]
       end
 
       def user_info
@@ -16,7 +16,7 @@ module SocialOauthApi
           get(user_info_url,
               access_token: access_token,
               oauth_consumer_key: client_id,
-              openid: open_id)
+              openid: openid)
         )
       end
 
@@ -28,7 +28,7 @@ module SocialOauthApi
         user_info['figureurl']
       end
 
-      alias :id :open_id
+      alias :id :openid
       alias :name :nickname
       alias :image_url :figureurl
     end

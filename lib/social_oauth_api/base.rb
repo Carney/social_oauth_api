@@ -2,12 +2,13 @@
 
 module SocialOauthApi
   module Base
-    attr_reader :client_id, :provider_type, :access_token
+    attr_reader :client_id, :openid, :provider_type, :access_token
 
     HTTP_TIMEOUT = 15
 
     def initialize options
       @client_id     = options[:client_id]
+      @openid        = options[:openid]
       @provider_type = options[:provider_type]
       @access_token  = options[:access_token]
     end
