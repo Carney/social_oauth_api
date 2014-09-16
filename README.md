@@ -16,7 +16,7 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'social_oauth_api'
+    gem 'social_oauth_api', '~> 0.1.2'
 
 And then execute:
 
